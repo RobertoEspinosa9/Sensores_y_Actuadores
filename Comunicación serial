@@ -1,0 +1,49 @@
+En
+int LEDC = 5;
+int t1; int t2; int t3; int t4;
+configuración vacía () {
+  Serial.begin (9600);
+  Serial.println ("¿Cuantos milisegundos en el LED amarillo?");
+  while (Serial.available () == 0) {
+  }
+  t1 = Serial.parseInt ();
+  pinMode (LEDA, SALIDA);
+  ////////////////////////////////////////////////// ////////////////////
+  Serial.println ("");
+  Serial.println ("¿Cuantos milisegundos en el LED verde?");
+  while (Serial.available () == 0) {
+  }
+  t2 = Serial.parseInt ();
+    pinMode (LEDB, SALIDA);
+
+///////////////////////////////////////////
+   Serial.println ("");
+    Serial.println ("¿Cuantos milisegundos en el LED rojo?");
+  while (Serial.available () == 0) {
+  }
+  t3 = Serial.parseInt ();
+     pinMode (LEDC, SALIDA);
+
+     /////////////////////////////
+     Serial.println ("");
+    Serial.println ("¿Cuantos milisegundos que desean permanentemente pueden apagar los leds entre ellos?");
+  while (Serial.available () == 0) {
+  }
+  t4 = Serial.parseInt ();
+}
+
+bucle de vacío () {
+escritura digital (LEDA, ALTA);
+retardo (t1);
+escritura digital (LEDA, BAJA);
+retraso (t4);
+escritura digital (LEDB, ALTA);
+retardo (t2);
+escritura digital (LEDB, LOW);
+retraso (t4);
+escritura digital (LEDC, ALTA);
+retraso (t3);
+escritura digital (LEDC, LOW);
+retraso (t4);
+}
+© 2019 GitHub, Inc.
